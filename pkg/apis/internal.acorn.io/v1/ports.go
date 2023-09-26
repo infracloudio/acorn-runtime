@@ -260,7 +260,7 @@ func ParsePortBindings(args []string) (result []PortBinding, _ error) {
 			if err != nil {
 				return nil, err
 			}
-			if (binding.Protocol == ProtocolHTTP || (binding.Protocol == "" && proto == string(ProtocolHTTP))) &&
+			if (binding.Protocol == ProtocolHTTP || (binding.Protocol == "" && proto == string(ProtocolHTTP)) || (proto == "")) &&
 				binding.Port != 0 {
 				return nil, fmt.Errorf("can not bind an http port [%d] to an alternative port [%d], only hostname", binding.TargetPort, binding.Port)
 			}
