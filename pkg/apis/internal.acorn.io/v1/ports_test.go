@@ -204,7 +204,7 @@ func TestParsePortBindings(t *testing.T) {
 				Port:       81,
 				TargetPort: 80,
 			},
-			wantErr: assert.NoError,
+			wantErr: assert.Error,
 		},
 		{
 			port: "81:80/tcp",
